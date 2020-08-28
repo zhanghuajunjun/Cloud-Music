@@ -1,0 +1,31 @@
+<view class="title">
+	<view class="musiccity">音乐馆</view>
+	<view bindtap="foucs" class="ipt">{{showKeyWord}}</view>
+	<view wx:if="{{$.img === ''}}" class="flex-cent">
+		<image src="../../image/recognizing.png" class="recognizing"></image>
+	</view>
+	<view wx:else class="flex-cent">
+		<image src="{{$.img}}" class="recogniz {{$.paused === true ? 'active' : ''}}" bindtap="play"></image>
+	</view>
+	<image src="../../image/searchsss.png" class="searchImg"></image>
+</view>
+<view class="code"></view>
+<view class="rotation">
+	<rotation banners="{{banners}}"></rotation>
+</view>
+<view class="Recommendedlist">
+	<Recommendedlist result="{{result}}"></Recommendedlist>
+</view>
+<view class="childThree">
+	<childThree three1="{{three1}}" three2="{{three2}}" three3="{{three3}}"></childThree>
+</view>
+<view class="four">
+	<five recommend="{{recommend}}"></five>
+</view>
+<view class="four">
+	<four three1="{{three1}}" three2="{{three2}}" three3="{{three3}}" four1="{{four1}}" four2="{{four2}}"></four>
+</view>
+<view class="six">
+	<six six="{{six}}"></six>
+</view>
+<view class="end">人家也是有底线的</view>

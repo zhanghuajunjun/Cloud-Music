@@ -1,0 +1,91 @@
+<view class="box">
+	<view>
+		<view class="recommend">推荐榜单</view>
+		<view class="wid">
+			<view wx:for="{{recomList}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">官方榜</view>
+		<view wx:for="{{officalList}}" wx:key="index" class="d-flex" bindtap="playlistDetail" data-id="{{item.id}}">
+			<image src="{{item.coverImgUrl}}" class="image">
+				<view class="updata">{{item.updateFrequency}}</view>
+			</image>
+			<view class="tracks">
+				<view wx:for="{{item.tracks}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1" class="item1">{{index1+1}}.{{item1.first}} - {{item1.second}}</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">特色榜</view>
+		<view class="wid">
+			<view wx:for="{{features}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">全球榜</view>
+		<view class="wid">
+			<view wx:for="{{world}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">地区榜</view>
+		<view class="wid">
+			<view wx:for="{{diqu}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">曲风榜</view>
+		<view class="wid">
+			<view wx:for="{{qufeng}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view>
+		<view class="recommend">更多榜单</view>
+		<view class="wid">
+			<view wx:for="{{more}}" wx:key="index" bindtap="playlistDetail" data-id="{{item.id}}">
+				<view class="{{(index+2)%3===0 ? 'cnm' : ''}} mm">
+					<image src="{{item.coverImgUrl}}" class="img">
+						<view class="updata">{{item.updateFrequency}}</view>
+					</image>
+					<view class="name">{{item.name}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

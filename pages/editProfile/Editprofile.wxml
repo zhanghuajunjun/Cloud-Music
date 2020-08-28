@@ -1,0 +1,66 @@
+<view class="edit">
+	<van-cell title="昵称" is-link value="{{nickname}}" bind:click="nickname"/>
+	<van-dialog 
+    use-slot 
+    title="昵称" 
+    show="{{ show }}" 
+    show-cancel-button 
+    bind:close="onCloseName" 
+    bind:confirm="onConfirmName">
+		<input class="weui-input" value="{{value}}" bind:confirm='ipt'/>
+	</van-dialog>
+	<van-cell title="性别" is-link value="{{sex}}" bind:click="sex"/>
+  <van-popup
+    show="{{ show1 }}"
+    position="bottom"
+    custom-style="height: 50%;"
+    bind:close="onClose">
+    <van-picker
+      show-toolbar
+      title="性别"
+      default-index="{{ index }}"
+      columns="{{ columns }}"
+      bind:cancel="onCancel"
+      bind:confirm="onConfirmSex"
+    />
+  </van-popup>
+	<van-cell title="生日" is-link value="{{birthday}}" bind:click="birthday"/>
+  <van-popup
+    show="{{ show2 }}"
+    position="bottom"
+    custom-style="height: 50%;">
+   <van-datetime-picker
+    type="date"
+    value="{{ Date }}"
+    bind:cancel="onCancel"
+    bind:confirm="confirmBir"
+    min-date="{{ minDate }}"
+    max-date='{{currentDate}}'/>
+  </van-popup>
+	<van-cell title="城市" is-link value="{{city}}" bind:click="city"/>
+    <van-popup
+    show="{{ show3 }}"
+    position="bottom"
+    custom-style="height: 50%;">
+   <van-area 
+    area-list="{{area}}" 
+    columns-num="{{ 2 }}" 
+    title="城市列表" 
+    bind:cancel="onCancel" 
+    bind:confirm="confirmCity"/>
+  </van-popup>
+	<van-cell-group>
+		<van-field 
+      value="{{ signature }}" 
+      label="签名" 
+      type="textarea" 
+      autosize 
+      border="{{ false }}" 
+      bind:input="signature"/>
+	</van-cell-group>
+
+<view class="btn">
+<view class="submit" bindtap="submit">确认修改</view>
+</view>
+  
+</view>

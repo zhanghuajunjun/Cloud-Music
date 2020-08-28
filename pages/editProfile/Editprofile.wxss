@@ -1,0 +1,21 @@
+.edit {
+  padding: 30rpx 20rpx;
+}
+.weui-input {
+  text-align: center;
+}
+.btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100rpx;
+}
+.submit {
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: linear-gradient(to right, #4bb0ff, #6149f6);
+  color: white;
+  border-radius: 10rpx;
+}

@@ -1,0 +1,93 @@
+<view class="title">
+	<view class="nav">
+		<view class="recommend {{active === 0 ? 'activess' : ''}}" bindtap="newDisc">新碟</view>
+		<view class="xian"></view>
+		<view class="recommend {{active === 1 ? 'activess' : ''}}" bindtap="newSong">新歌</view>
+	</view>
+	<view class="songlist">
+		<view wx:if="{{active === 0}}">更多新碟</view>
+		<view wx:if="{{active === 1}}">更多新歌</view>
+	</view>
+</view>
+<view wx:if="{{active === 0}}">
+	<scroll-view scroll-x="true" style="width: 100%">
+		<view class="scroll-view_H">
+			<view>
+				<view id="demo1" wx:for="{{four1}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view class="name">
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image"></image>
+					</view>
+				</view>
+			</view>
+			<view class="leftss">
+				<view id="demo3" wx:for="{{four2}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view class="name">
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>
+<view wx:if="{{active === 1}}">
+	<scroll-view scroll-x="true" style="width: 100%">
+		<view class="scroll-view_H">
+			<view>
+				<view id="demo1" wx:for="{{three1}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+			<view class="mid">
+				<view id="demo2" wx:for="{{three2}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+			<view class="left">
+				<view id="demo3" wx:for="{{three3}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

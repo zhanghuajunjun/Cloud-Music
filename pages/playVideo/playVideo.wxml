@@ -1,0 +1,2 @@
+    <video id="myVideo" src="{{url}}" binderror="videoErrorCallback" show-center-play-btn='{{true}}' show-play-btn="{{true}}" controls 
+    picture-in-picture-mode="{{['push', 'pop']}}" direction='90' bindenterpictureinpicture='bindVideoEnterPictureInPicture' bindleavepictureinpicture='bindVideoLeavePictureInPicture'></video>

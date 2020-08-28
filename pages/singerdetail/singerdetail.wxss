@@ -1,0 +1,264 @@
+.img1v1Url {
+  width: 100%;
+  position: relative;
+  height: 480rpx;
+}
+
+.artistName {
+  font-size: 34rpx;
+  position: absolute;
+  left: 50rpx;
+  bottom: 200rpx;
+  color: white;
+}
+
+.ruzhu {
+  font-size: 25rpx;
+  position: absolute;
+  left: 50rpx;
+  bottom: 110rpx;
+  color: white;
+}
+
+.artistElse {
+  position: absolute;
+  left: 50rpx;
+  bottom: 150rpx;
+  display: flex;
+  align-items: center;
+}
+
+.detail {
+  font-size: 26rpx;
+  margin-right: 10rpx;
+  color: white;
+  margin-right: 20rpx;
+}
+
+.guanzhu {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  background: #ccc;
+  border-radius: 20rpx;
+  padding: 6rpx 10rpx;
+  position: absolute;
+  bottom: 110rpx;
+  right: 140rpx;
+  display: flex;
+  align-items: center;
+}
+
+.add {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.profilemail {
+  font-size: 24rpx;
+  background: #eee;
+  border-radius: 20rpx;
+  padding: 6rpx 10rpx;
+  position: absolute;
+  bottom: 110rpx;
+  right: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.email {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+
+.nav {
+  font-size: 30rpx;
+  width: 25%;
+  text-align: center;
+  font-weight: 600;
+}
+
+.Size {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+.active {
+  color: red;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: skyblue;
+  height: 80rpx;
+  width: 100%;
+  border-radius: 30rpx 30rpx 0 0;
+  margin-top: -80rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.box {
+  padding: 0 30rpx;
+}
+
+.box-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 690rpx;
+  padding: 10rpx 0;
+}
+
+.flexs {
+  display: flex;
+  align-items: center;
+}
+
+.ppp {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.hot {
+  font-size: 30rpx;
+  font-weight: 600;
+  margin-left: 10rpx;
+}
+
+.more {
+  font-size: 24rpx;
+  border: 1rpx solid #eee;
+  border-radius: 20rpx;
+  padding: 6rpx 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.songs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.songs-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.xingqu-item {
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.item-name {
+  display: flex;
+  font-size: 28rpx;
+  width: 520rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.al-name {
+  font-size: 24rpx;
+  width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.paly-img {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.moress {
+  width: 20rpx;
+  height: 40rpx;
+}
+.introduce {
+  font-size: 26rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+}
+.introduction {
+  font-size: 24rpx;
+  line-height: 60rpx;
+  text-indent:2em
+}
+
+.sings {
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sings-item {
+  display: flex;
+  align-items: center;
+  width: 656rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sings-name {
+  margin-left: 20rpx;
+}
+.coverImgUrl {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.playList {
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.coverUrl {
+  width: 240rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+.palycount {
+  font-size: 26rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.paly1 {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 6rpx;
+}
+.videos {
+  font-size: 28rpx;
+  width: 430rpx;
+}
+.creator {
+  font-size: 24rpx;
+  width: 430rpx;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.num {
+  width: 40rpx;
+  text-align: center;
+}

@@ -1,0 +1,55 @@
+<view class="title">
+	<view class="recommend">推荐新歌</view>
+	<view class="songlist" bindtap="play">
+		<image src="../../image/play (1).png" class="img"></image>
+		<view>播放全部</view>
+	</view>
+</view>
+<view>
+	<scroll-view scroll-x="true" style="width: 100%">
+		<view class="scroll-view_H">
+			<view>
+				<view id="demo1" wx:for="{{three1}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+			<view class="mid">
+				<view id="demo2" wx:for="{{three2}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+			<view class="left">
+				<view id="demo3" wx:for="{{three3}}" wx:key="index">
+					<view class="scroll {{index === 1?'active':''}}">
+						<view class="item">
+							<image src="{{item.picUrl}}" class="item-img"></image>
+							<view>
+								<view>{{item.name}}</view>
+								<view class="singer">{{item.song.album.artists[0].name}}</view>
+							</view>
+						</view>
+						<image src="../../image/play (2).png" class="image" bindtap="play" data-id="{{item.id}}"></image>
+					</view>
+				</view>
+			</view>
+		</view>
+	</scroll-view>
+</view>

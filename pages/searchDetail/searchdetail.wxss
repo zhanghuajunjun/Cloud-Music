@@ -1,0 +1,347 @@
+.seartitle {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  z-index: 99999;
+}
+
+.sear {
+  width: 100%;
+}
+
+.codes {
+  height: 108rpx;
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.value {
+  border-radius: 20rpx;
+  background: rgb(233, 230, 230);
+  font-size: 26rpx;
+  width: 150rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 10rpx;
+  padding: 5rpx 0;
+  text-align: center;
+}
+
+.value1 {
+  padding: 5rpx 5rpx;
+  margin-left: 10rpx;
+}
+
+.uzi {
+  padding: 20rpx 30rpx;
+}
+
+.smlz {
+  font-weight: 600;
+}
+
+.searchWord {
+  display: flex;
+  align-items: center;
+}
+.hotsearch {
+  padding: 30rpx;
+  font-weight: 600;
+}
+
+.hots-item {
+  padding: 0 20rpx;
+}
+
+.searchWord {
+  display: flex;
+  align-items: center;
+}
+
+.img {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 30rpx;
+}
+
+.content {
+  font-size: 28rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+
+.score {
+  font-size: 28rpx;
+  color: #999;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.index {
+  font-size: 28rpx;
+  color: #999;
+  margin-right: 30rpx;
+}
+
+.active {
+  color: red;
+}
+
+.lol {
+  display: flex;
+  align-items: center;
+}
+
+.searchItem {
+  color: rgb(135, 206, 235);
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  padding: 20rpx 0;
+}
+
+.suggestItem {
+  font-size: 26rpx;
+  color: white;
+  border-top: 1rpx solid #fff;
+  padding: 20rpx 0;
+  display: flex;
+  width: 690rpx;
+}
+
+.searchIcon {
+  margin: 0 20rpx;
+}
+
+.suggest {
+  position: absolute;
+  background: rgba(57,86,113);
+  left: 30rpx;
+  top: 100rpx;
+  z-index: 999;
+}
+.zonghe {
+  padding: 30rpx;
+}
+.xingqu {
+  padding: 10rpx 0;
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+}
+.songer {
+  font-size: 28rpx;
+}
+.fans {
+  font-size: 24rpx;
+  margin-top: 10rpx;
+}
+.xingqu-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.xingqu-item {
+  height: 100rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.zhuanji-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+}
+.album {
+  margin-top: 20rpx;
+}
+.album-name {
+  font-size: 28rpx;
+  width: 570rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 30rpx 0;
+}
+.recommend {
+  font-size: 32rpx;
+  font-weight: 600;
+}
+.songlist {
+  font-size: 28rpx;
+  font-weight: 300;
+  border: 1rpx solid #ccc;
+  border-radius: 25rpx;
+  padding: 6rpx 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.paly-img {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.songs-img {
+  width: 100rpx;
+  height: 100rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.al-name {
+  font-size: 24rpx;
+  width: 536rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.item-name {
+  display: flex;
+  font-size: 28rpx;
+  width: 520rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.songs {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+  width: 100%;
+  justify-content: space-between;
+}
+.moreText {
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+  margin-top: 30rpx;
+}
+.coverImgUrl {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+}
+.officialTags {
+  background: #eee;
+  font-size: 24rpx;
+  margin-right: 10rpx;
+  padding: 6rpx 10rpx;
+  border-radius: 10rpx;
+}
+.ffff {
+  margin-top: 10rpx;
+}
+.playList {
+  height: 150rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.creator-item1 {
+  font-size: 24rpx;
+  margin-right: 10rpx;
+}
+.creator {
+  font-size: 24rpx;
+  width: 430rpx;
+  display: flex;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.coverUrl {
+  width: 240rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 10rpx;
+  position: relative;
+}
+.videos {
+  font-size: 28rpx;
+  width: 430rpx;
+}
+.qqq {
+  margin-left: 10rpx;
+}
+.sim_querys {
+  background: #eee;
+  font-size: 28rpx;
+  margin-right: 10rpx;
+  padding: 6rpx 10rpx;
+  border-radius: 20rpx;
+  margin-bottom: 10rpx;
+}
+.singer-img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.singer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+.man {
+  width: 30rpx;
+  height: 30rpx;
+  margin-left: 10rpx;
+}
+.play {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 20rpx;
+}
+.playAll {
+  margin-bottom: 20rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.paly1 {
+  width: 25rpx;
+  height: 25rpx;
+  margin-right: 6rpx;
+}
+
+.palycount {
+  font-size: 26rpx;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.singers {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ruzhu {
+  font-size: 26rpx;
+}

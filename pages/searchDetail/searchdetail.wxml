@@ -1,0 +1,321 @@
+	<view class="seartitle">
+		<van-search value="{{ keyWord }}" placeholder="{{showKeyWord}}" show-action bind:search="onSearch" bind:cancel="onCancel" class="sear" input-align="center" shape="round" bind:change="onChange" bind:focus="onFocus" confirm-type="search" />
+	</view>
+	<view class="codes"></view>
+	<view class="suggest" wx:if="{{keyWords !== ''&& uzi === 'adc'}}">
+		<view class="searchItem">搜索“{{keyWords}}”</view>
+		<view wx:for="{{suggestList}}" wx:key="index">
+			<view class="suggestItem" bindtap="historySearch" data-keyword="{{item.keyword}}">
+				<van-icon name="search" class="searchIcon" />
+				<view>{{item.keyword}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{flag === true}}">
+		<view class="uzi">
+			<view class="nav">
+				<view class="smlz">搜索历史</view>
+				<van-icon name="delete" bindtap="delete" />
+			</view>
+			<scroll-view scroll-x="true" style="height: 100%;">
+				<view class="searchWord">
+					<view id="demo1" wx:for="{{searchHis}}" wx:key="index">
+						<view class="value" bindtap="historySearch" data-keyword="{{item}}">
+							<view class="value1">{{item}}</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+		</view>
+		<view class="hotsearch">热搜榜</view>
+		<view class="hots-item">
+			<view wx:for="{{hotSearch}}" wx:key="index" class="item">
+				<view class="lol" bindtap="historySearch" data-keyword="{{item.searchWord}}">
+					<view class="index {{index < 4 ? 'active' : ''}}">{{index+1}}</view>
+					<view>
+						<view class="searchWord">
+							<view>{{item.searchWord}}</view>
+							<image src="{{item.iconUrl}}" class="img"></image>
+						</view>
+						<view class="content">{{item.content}}</view>
+					</view>
+				</view>
+				<view class="score">{{item.score}}</view>
+			</view>
+		</view>
+	</view>
+	<view wx:else>
+		<van-tabs active="{{ active }}" bind:change="Change">
+			<van-tab title="综合">
+				<view class="zonghe">
+					<view wx:if="{{imp === 'adc'}}">
+						<view class="xingqu">你可能感兴趣</view>
+						<view class="d-flex" bindtap="singerDetail" data-id="{{artist.id}}">
+							<image src="{{artist.img1v1Url}}" class="xingqu-img"></image>
+							<view class="xingqu-item">
+								<view wx:if="{{artist.alias.length === 0}}">
+									<view class="songer">歌手：{{artist.name}}</view>
+								</view>
+								<view wx:else>
+									<view class="songer">歌手：{{artist.name}}({{artist.alias[0]}})</view>
+								</view>
+								<view class="fans">粉丝:{{fansSize}} 歌曲:{{artist.musicSize}} 专辑:{{artist.albumSize}}</view>
+							</view>
+						</view>
+						<view class="d-flex album" bindtap="albumDetail" data-id="{{album.id}}">
+							<image src="{{album.blurPicUrl}}" class="zhuanji-img"></image>
+							<view class="xingqu-item">
+								<view wx:if="{{album.alias.length === 0}}">
+									<view class="album-name">专辑:{{album.name}}</view>
+								</view>
+								<view wx:else>
+									<view class="album-name">专辑:{{album.name}}({{album.alias[0]}})</view>
+								</view>
+								<view class="fans">{{album.artist.name}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="title">
+						<view class="recommend">单曲</view>
+						<view class="songlist" bindtap="play">
+							<image src="../../image/play (1).png" class="paly-img"></image>
+							<view>播放全部</view>
+						</view>
+					</view>
+					<view wx:for="{{songs.songs}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="play" data-id="{{item.id}}">
+							<image src="{{item.al.picUrl}}" class="songs-img"></image>
+							<view class="xingqu-item">
+								<view class="item-name">{{item.name}}</view>
+								<view class=" al-name">{{item.ar[0].name}} - {{item.al.name}}
+								</view>
+							</view>
+						</view>
+						<view wx:if="{{item.mv !== 0}}">
+							<image src="../../image/play (1).png" class="paly-img" bindtap="playMV" data-id="{{item.mv}}" data-style="{{item.ftype}}"></image>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreSongs">{{songs.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">歌单</view>
+					</view>
+					<view wx:for="{{playList.playLists}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="playlistDetail" data-id="{{item.id}}">
+							<image src="{{item.coverImgUrl}}" class="coverImgUrl"></image>
+							<view class="playList">
+								<view class="item-name">{{item.name}}</view>
+								<view class=" al-name">{{item.trackCount}}首 by{{item.creator.nickname}}, 播放{{item.playCount}}次
+								</view>
+								<view class="d-flex ffff">
+									<view wx:for="{{item.officialTags}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+										<view class="officialTags">{{item1}}</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreSongss">{{playList.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">视频</view>
+					</view>
+					<view wx:for="{{video.videos}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="playMV" data-id="{{item.vid}}" data-style="{{item.type}}">
+							<image src="{{item.coverUrl}}" class="coverUrl">
+							</image>
+							<view class="playList">
+								<view class="videos">{{item.title}}</view>
+								<view class="creator">{{item.durationms}} by
+									<view class="d-flex qqq">
+										<view wx:for="{{item.creator}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+											<view class="creator-item1">{{item1.userName}}</view>
+										</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreVideos">{{video.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">相关搜索</view>
+					</view>
+					<view class="d-flex f-f-warp">
+						<view wx:for="{{sim_query.sim_querys}}" wx:key="index">
+							<view class="sim_querys">{{item.keyword}}</view>
+						</view>
+					</view>
+					<view class="title">
+						<view class="recommend">主题</view>
+					</view>
+					<view wx:for="{{talk.talks}}" wx:key="index" class="songs">
+						<view class="d-flex">
+							<image src="{{item.showCover.url}}" class="coverImgUrl"></image>
+							<view class="playList">
+								<view class="item-name"># {{item.talkName}}</view>
+								<view class=" al-name">{{item.follows}}人关注 {{item.mlogCount}}参与</view>
+							</view>
+						</view>
+					</view>
+					<view class="moreText">{{talk.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">歌手</view>
+					</view>
+					<view wx:for="{{singer.artists}}" wx:key="index" class="singer" bindtap="singerDetail" data-id="{{item.id}}">
+						<image src="{{item.img1v1Url}}" class="singer-img"></image>
+						<view wx:if="{{item.alias.length === 0}}">
+							<view class="songer">{{item.name}}</view>
+						</view>
+						<view wx:else>
+							<view class="songer">{{item.name}}({{item.alias[0]}})</view>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreSings">{{singer.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">专辑</view>
+					</view>
+					<view wx:for="{{albums.albums}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="albumDetail" data-id="{{item.id}}">
+							<image src="{{item.blurPicUrl}}" class="coverImgUrl"></image>
+							<view class="playList">
+								<view class="item-name">{{item.name}}</view>
+								<view class=" al-name">{{item.artist.name}} {{item.publishTime}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreAlbums">{{albums.moreText}} ></view>
+					<view class="title">
+						<view class="recommend">用户</view>
+					</view>
+					<view wx:for="{{user.users}}" wx:key="index" class="songs">
+						<view class="d-flex">
+							<image src="{{item.avatarUrl}}" class="singer-img"></image>
+							<view class="playList">
+								<view class="item-name">{{item.description}}
+									<view wx:if="{{item.gender === 1}}">
+										<image src='../../image/男.png' class="man"></image>
+									</view>
+									<view wx:if="{{item.gender === 2}}">
+										<image src='../../image/nv.png' class="man"></image>
+									</view>
+								</view>
+								<view class=" al-name">{{item.detailDescription}}</view>
+							</view>
+						</view>
+					</view>
+					<view class="moreText" bindtap="moreyonghu">{{user.moreText}} ></view>
+				</view>
+			</van-tab>
+			<van-tab title="单曲">
+				<view class="zonghe">
+					<view class="playAll" bindtap="play">
+						<image src="../../image/play (2).png" class="play"></image>
+						播放全部
+					</view>
+					<view wx:for="{{allsongs}}" wx:key="index" class="songs">
+						<view class="xingqu-item" bindtap="play" data-id="{{item.id}}">
+							<view class="item-name">{{item.name}}</view>
+							<view class=" al-name">{{item.artists[0].name}}/{{item.artists[1].name}} - {{item.album.name}}
+							</view>
+						</view>
+						<view wx:if="{{item.mvid !== 0}}">
+							<image src="../../image/play (1).png" class="paly-img" bindtap="playMV" data-id="{{item.mvid}}" data-style="{{item.ftype}}"></image>
+						</view>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="MV">
+				<view class="zonghe">
+					<view wx:for="{{mvs}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="playMV" data-id="{{item.id}}" data-style="mv">
+							<image src="{{item.cover}}" class="coverUrl">
+								<view class="palycount">
+									<image src="../../image/播放.png" class="paly1"></image>
+									<view>{{item.playCount}}</view>
+								</view>
+							</image>
+							<view class="playList">
+								<view class="videos">{{item.name}}</view>
+								<view class="creator">{{item.briefDesc}} by {{item.artistName}}</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="视频">
+				<view class="zonghe">
+					<view wx:for="{{video}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="playMV" data-id="{{item.vid}}" data-style="{{item.type}}">
+							<image src="{{item.coverUrl}}" class="coverUrl">
+							</image>
+							<view class="playList">
+								<view class="videos">{{item.title}}</view>
+								<view class="creator">{{item.durationms}} by
+									<view class="d-flex qqq">
+										<view wx:for="{{item.creator}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+											<view class="creator-item1">{{item1.userName}}</view>
+										</view>
+									</view>
+								</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="歌手">
+				<view class="zonghe">
+					<view wx:for="{{singer}}" wx:key="index" class="singers" bindtap="singerDetail" data-id="{{item.id}}">
+						<view class="singer">
+							<image src="{{item.img1v1Url}}" class="singer-img"></image>
+							<view wx:if="{{item.alias.length === 0}}">
+								<view class="songer">{{item.name}}</view>
+							</view>
+							<view wx:else>
+								<view class="songer">{{item.name}}({{item.alias[0]}})</view>
+							</view>
+						</view>
+						<view wx:if="{{item.accountId == null}}"></view>
+						<view wx:else class="ruzhu">已入驻</view>
+					</view>
+				</view>
+
+			</van-tab>
+			<van-tab title="专辑">
+				<view class="zonghe">
+					<view wx:for="{{albums}}" wx:key="index" class="songs">
+						<view class="d-flex" bindtap="albumDetail" data-id="{{item.id}}">
+							<image src="{{item.blurPicUrl}}" class="coverImgUrl"></image>
+							<view class="playList">
+								<view class="item-name">{{item.name}}</view>
+								<view class=" al-name">{{item.artist.name}} {{item.publishTime}}</view>
+							</view>
+						</view>
+					</view>
+				</view>
+			</van-tab>
+			<van-tab title="歌单">
+				<view class="zonghe">
+					<view wx:for="{{playList}}" wx:key="index" class="songs" bindtap="playlistDetail" data-id="{{item.id}}">
+						<view class="d-flex">
+							<image src="{{item.coverImgUrl}}" class="coverImgUrl"></image>
+							<view class="playList">
+								<view class="item-name">{{item.name}}</view>
+								<view class=" al-name">{{item.trackCount}}首 by{{item.creator.nickname}}, 播放{{item.playCount}}次
+								</view>
+								<view class="d-flex ffff">
+									<view wx:for="{{item.officialTags}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1">
+										<view class="officialTags">{{item1}}</view>
+									</view>
+								</view>
+							</view>
+						</view>
+
+					</view>
+
+				</view>
+			</van-tab>
+			<van-tab title="歌词">内容 2</van-tab>
+			<van-tab title="电台">内容 3</van-tab>
+			<van-tab title="用户">内容 4</van-tab>
+		</van-tabs>
+
+
+	</view>

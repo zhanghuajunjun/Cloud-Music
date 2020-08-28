@@ -1,0 +1,48 @@
+.title {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.recommend {
+  font-size: 38rpx;
+  font-weight: 600;
+}
+.songlist {
+  font-size: 28rpx;
+  font-weight: 300;
+  border: 1rpx solid #ccc;
+  border-radius: 25rpx;
+  padding: 6rpx 10rpx;
+}
+.result {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%
+}
+.result-item {
+  width: 31%;
+  margin-bottom: 20rpx;
+}
+.picUrl {
+  width: 100%;
+  height: 260rpx;
+  border-radius: 10rpx;
+}
+.name {
+  font-size: 28rpx;
+  padding: 10rpx;
+  height: 73rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.active {
+  margin-left: 3.5%;
+  margin-right: 3.5%;
+}

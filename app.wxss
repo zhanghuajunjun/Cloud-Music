@@ -1,0 +1,122 @@
+/* 整体格式 */
+.container {
+  display: flex;
+  justify-content: center;
+}
+/* 弹性盒模型 */
+.d-flex {
+  display: flex;
+}
+/* 水平居中 */
+.flex-j-c {
+  display: flex;
+  justify-content: center;
+}
+/* 两边无间距等分 */
+.flex-j-sb {
+  display: flex;
+  justify-content: space-between;
+}
+/* 有间距等分 */
+.flex-j-sa {
+  display: flex;
+  justify-content: space-around;
+}
+/* 水平垂直居中 */
+.flex-cent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 垂直居中 */
+.flex-a-c {
+  display: flex;
+  align-items: center;
+}
+/* 弹性盒模型换行 */
+.f-f-warp {
+  flex-wrap: wrap;
+}
+/* 竖直方向排列 */
+.f-dir-c {
+  display: flex;
+  flex-direction: column;
+} 
+/* 竖直方向排列居中 */
+.f-dir-mid{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.f-dir-ai{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* 超出部分省略 */
+.wh-text-over{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  /* 超出部分隐藏（只限字体） */
+}
+/* 相对定位 */
+.pos-re {
+  position: relative;
+}
+/* 绝对定位 */
+.pos-ab {
+  position: absolute;
+}
+/* 内边距10px */
+.paddten {
+  padding: 20rpx;
+}
+.paddss {
+  padding: 30rpx;
+}
+/* 内边距5px */
+.paddfive {
+  padding: 5px;
+}
+/* 上下内边距5px */
+.padd-tobo {
+  padding: 5px 0;
+}
+/* 左右内边距5px */
+.padd-lr {
+  padding: 5px 0;
+}
+/* 左内边距10px */
+.padd-l {
+  padding-left: 10px;
+}
+/* 右内边距10px */
+.padd-r {
+  padding-right: 10px;
+}
+/* 下内边距10px */
+.padd-r {
+  padding-bottom: 10px;
+}
+/* 上外边距30px */
+.marg-topss {
+  margin-top: 30px;
+}
+/* 上外边距10px */
+.marg-tops {
+  margin-top: 40rpx;
+}
+/* 左边距10px */
+.marg-les {
+  margin-left: 10px;
+}
+/* you边距10px */
+.marg-ris {
+  margin-right: 10px;
+}
+.marg-topys {
+  margin-top: 140rpx;
+}
+

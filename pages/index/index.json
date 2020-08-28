@@ -1,0 +1,13 @@
+{
+  "usingComponents": {
+    "rotation": "../../components/rotation/Rotation",
+    "Recommendedlist": "../../components/Recommendedlist/Recommendedlist",
+    "childThree": "../../components/childThree/childThree",
+    "four": "../../components/four/four",
+    "five": "../../components/five/five",
+    "six": "../../components/six/six",
+    "van-search": "../../lib/vant/search/index",
+    "van-icon": "../../lib/vant/icon/index"
+  },
+  "navigationBarTitleText":"首页"
+}

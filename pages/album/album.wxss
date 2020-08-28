@@ -1,0 +1,172 @@
+.back {
+  width: 100%;
+  height: 550rpx;
+  background: #000;
+  padding: 0 30rpx;
+}
+.back_img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 550rpx;
+  opacity: 0.2;
+}
+.album_img {
+  width: 280rpx;
+  height: 280rpx;
+  margin-top: 30rpx;
+  margin-right: 30rpx;
+  border-radius: 10rpx;
+}
+.album_name {
+  margin-top: 30rpx;
+  font-size: 34rpx;
+  color: white;
+}
+.artists {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  color: white;
+  margin-top: 10rpx;
+}
+.artistsName {
+  margin-right: 10rpx;
+}
+.publishTime {
+  font-size: 26rpx;
+  color: white;
+  margin-top: 110rpx;
+}
+.description {
+  font-size: 26rpx;
+  color: white;
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.album_description {
+  width: 364rpx;
+  height: 30rpx;
+  white-space: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.more {
+  width: 20rpx;
+  text-align: center;
+  margin-left: 10rpx;
+}
+.icon {
+  width: 690rpx;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50rpx;
+}
+.iconfont_pj {
+  width: 40rpx;
+  height: 40rpx;
+}
+.iconfont {
+  width: 34rpx;
+  height: 34rpx;
+}
+.iconfont_dx {
+  width: 38rpx;
+  height: 38rpx;
+}
+.count {
+  font-size: 24rpx;
+  color: white;
+  margin-top: 10rpx;
+}
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 0 30rpx;
+  height: 80rpx;
+  width: 690rpx;
+  border-radius: 40rpx 40rpx 0 0;
+  margin: 28rpx -30rpx 0 -30rpx;
+  z-index: 99;
+}
+.play_img {
+  width: 38rpx;
+  height: 38rpx;
+}
+.play_all {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+  margin-right: 8rpx;
+}
+.songs {
+  font-size: 24rpx;
+}
+.collect {
+  font-size: 24rpx;
+  background: red;
+  color: white;
+  border-radius: 20rpx;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+.add {
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.songs_box {
+  padding: 0 30rpx;
+}
+.sings {
+  width: 100%;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sings-item {
+  display: flex;
+  align-items: center;
+  width: 656rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.num {
+  width: 40rpx;
+  text-align: center;
+}
+.sings-name {
+  margin-left: 20rpx;
+}
+.item-name {
+  display: flex;
+  font-size: 28rpx;
+  width: 520rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.al-name {
+  font-size: 24rpx;
+  width: 500rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 10rpx;
+}
+.paly-img {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 10rpx;
+}
+.moress {
+  width: 20rpx;
+  height: 40rpx;
+}

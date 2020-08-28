@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":"歌单广场",
+  "usingComponents": {
+    "van-tab": "../../lib/vant/tab/index",
+    "van-tabs": "../../lib/vant/tabs/index",
+    "van-icon": "../../lib/vant/icon/index",
+    "van-popup": "../../lib/vant/popup/index"
+  }
+}

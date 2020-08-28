@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText":"账户",
+  "usingComponents": {
+    "van-button": "../../lib/vant/button/index",
+    "van-icon": "../../lib/vant/icon/index"
+  }
+}

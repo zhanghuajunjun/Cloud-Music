@@ -1,0 +1,15 @@
+<view class="title">
+	<view class="recommend">推荐节目</view>
+	<view class="songlist">更多节目</view>
+</view>
+<scroll-view scroll-x="true" style="width: 100%">
+	<view class="nav">
+		<view wx:for="{{recommend}}" wx:key="index">
+			<view class="scroll-view_H {{index !== 0 ? 'mmm' : ''}}">
+				<image src="{{item.coverUrl}}" class="picUrl"></image>
+				<view class="name">{{item.name}}</view>
+				<view class="category">{{item.radio.category}}</view>
+			</view>
+		</view>
+	</view>
+</scroll-view>

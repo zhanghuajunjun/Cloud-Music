@@ -1,0 +1,61 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+	<van-tab title="手机号登录">
+		<view class="cell-group">
+			<van-cell-group>
+				<van-field 
+				value="{{ phone }}" 
+        label="手机号" 
+        placeholder="请输入手机号" 
+        left-icon="phone-o" 
+        type="number" 
+        required 
+				clearable 
+				bind:change="confirmPhone"	
+				bind:blur="blurPhone"
+				maxlength='11'/>
+      <view class="error" wx:if="{{length !== 11 && phone !== '' && flag === true}}">手机号格式不正确</view>
+				<van-field 
+				value="{{ password }}" 
+        label="密码" 
+        placeholder="请输入密码" 
+        border="{{ false }}" 
+        left-icon="manager-o" 
+        type="password" 
+        required 
+				clearable 
+				bind:confirm="confirmPass"/>
+			</van-cell-group>
+			<view class="flex-j-sa cz">
+				<view class="submit" bindtap="submit">立即登录</view>
+				<view class="register" bindtap="register">立即注册</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="邮箱登录">
+		<view class="cell-group">
+			<van-cell-group>
+				<van-field 
+				value="{{ email }}" 
+        label="邮箱" 
+        placeholder="请输入邮箱号" 
+        left-icon="envelop-o" 
+        type="email" 
+        required 
+				bind:confirm="confirmE"/>
+				<van-field 
+				value="{{ passwords }}" 
+        label="密码" 
+        placeholder="请输入密码" 
+        border="{{ false }}" 
+        left-icon="manager-o" 
+        type="password" 
+        required 
+				bind:confirm="confirmPa"/>
+			</van-cell-group>
+			<view class="flex-j-sa cz">
+				<view class="submit" bindtap="submit">立即登录</view>
+				<view class="register" bindtap="register">立即注册</view>
+			</view>
+		</view>
+	</van-tab>
+</van-tabs>

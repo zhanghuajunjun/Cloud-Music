@@ -1,0 +1,13 @@
+<view class="title">
+	<view class="recommend">推荐电台</view>
+	<view class="songlist">电台广场</view>
+</view>
+<view class="result">
+	<view 
+		wx:for="{{six}}" 
+		wx:key="index" 
+		class="result-item {{(index+2)%3 === 0?'active':''}}">
+    <image src="{{item.picUrl}}" class="picUrl"></image>
+    <view class="name">{{item.name}}</view>
+	</view>
+</view>

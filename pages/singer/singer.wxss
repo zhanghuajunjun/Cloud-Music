@@ -1,0 +1,89 @@
+.scrolls {
+  border-bottom: 1rpx solid rgb(210, 210, 210);
+  width: 100%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  font-size: 30rpx;
+  height: 100rpx;
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+}
+
+.mar {
+  width: 100%;
+}
+
+.boxs {
+  font-size: 28rpx;
+  width: 180rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+
+.box {
+  display: flex;
+  white-space: nowrap;
+}
+
+.box-title {
+  height: 54rpx;
+  width: 165rpx;
+  line-height: 54rpx;
+  font-size: 36rpx;
+  margin: 0 2%;
+  text-align: center;
+  padding: 20rpx;
+}
+
+.actives {
+  color: #d81e06;
+}
+
+.words {
+  color: #d81e06;
+}
+
+.microphone {
+  padding: 20rpx 30rpx;
+}
+.singerimg {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.singers {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+.songer {
+  font-size: 30rpx;
+  margin-right: 20rpx;
+}
+.ren {
+  width: 28rpx;
+  height: 28rpx;
+}
+.add {
+  width: 26rpx;
+  height: 26rpx;
+}
+.guanzhu {
+  font-size: 26rpx;
+  border: 1rpx solid #eee;
+  border-radius: 20rpx;
+  padding: 6rpx 10rpx;
+  display: flex;
+  align-items: center;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}

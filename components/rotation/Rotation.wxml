@@ -1,0 +1,38 @@
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" circular="{{circular}}">
+	<swiper-item wx:for="{{banners}}" wx:key="index">
+		<image src="{{item.imageUrl}}" class="swiperImg"></image>
+		<view class="typeTitle" style="background: {{item.titleColor}}">{{item.typeTitle}}</view>
+	</swiper-item>
+</swiper>
+<view class="nav">
+	<view class="nav-item" bindtap="recommend">
+		<view class="nav-img">
+			<image src="../../image/rili.png" class="navImg"></image>
+		</view>
+		<view class="nav-name">每日推荐</view>
+	</view>
+	<view class="nav-item" bindtap="songsheet">
+		<view class="nav-img">
+			<image src="../../image/gedan.png" class="navImg"></image>
+		</view>
+		<view class="nav-name">歌单</view>
+	</view>
+	<view class="nav-item" bindtap="ranking">
+		<view class="nav-img">
+			<image src="../../image/paihang.png" class="navImg"></image>
+		</view>
+		<view class="nav-name">排行榜</view>
+	</view>
+	<view class="nav-item" bindtap="djprogram">
+		<view class="nav-img">
+			<image src="../../image/diantai.png" class="navImg"></image>
+		</view>
+		<view class="nav-name">电台</view>
+	</view>
+	<view class="nav-item" bindtap="live">
+		<view class="nav-img">
+			<image src="../../image/live.png" class="navImg"></image>
+		</view>
+		<view class="nav-name">直播</view>
+	</view>
+</view>

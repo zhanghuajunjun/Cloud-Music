@@ -1,0 +1,49 @@
+<view class="notLogged" wx:if="{{uid===''}}">
+	<view class="not-Logged">您还没有登录哦！</view>
+	<view class="submit" bindtap="submit">登录</view>
+</view>
+
+
+
+<view wx:else class="else">
+	<view class="title">
+		<view class="d-flex">
+			<image src="{{profile.avatarUrl}}" class="image"></image>
+			<view class="nickname">
+				<view>{{profile.nickname}}</view>
+				<view class="level">Lv：{{level}}</view>
+			</view>
+		</view>
+		<view wx:if="{{flag === true}}">
+			<view class="account2">已签到</view>
+		</view>
+		<view wx:else>
+			<view class="account2" bindtap="Signin">签到</view>
+		</view>
+	</view>
+
+
+	<view class="flex-j-sb">
+		<view class="f-dir">
+			<view>{{profile.eventCount}}</view>
+			<view class="nav">动态</view>
+		</view>
+		<view class="f-dir">
+			<view>{{profile.follows}}</view>
+			<view class="nav">关注</view>
+		</view>
+		<view class="f-dir">
+			<view>{{profile.followeds}}</view>
+			<view class="nav">粉丝</view>
+		</view>
+		<view class="f-dir" bindtap="editprofile">
+			<van-icon name="edit" class="edit" />
+			<view class="nav">编辑资料</view>
+		</view>
+	</view>
+
+	<view class="button">
+		<view class="submit" bindtap="button">退出登录</view>
+	</view>
+
+</view>

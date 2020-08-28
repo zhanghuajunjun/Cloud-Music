@@ -1,0 +1,39 @@
+<!-- 歌手分类列表 -->
+<view>
+	<view class="scrolls">
+		<scroll-view scroll-x>
+			<view class="title">
+				<view wx:for="{{singerlist}}" wx:key="index" data-type="{{item.type}}" data-area="{{item.area}}" data-index="{{index}}" class="mar {{active === index ? 'words':''}}" bindtap="bindTap">
+					<view class="boxs">{{item.name}}</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- // 检索字母 -->
+	<view class="border" wx:if="{{active !== 0}}">
+		<scroll-view class="scroll" scroll-x="true">
+			<view class="box">
+				<view class="box-title" wx:for="{{zimu}}" wx:key="index">
+					<view class="word {{indexCat === index ? 'actives' : ''}}" data-item='{{item.initial}}' data-index="{{index}}" bindtap="goTo">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+	<view class="microphone">
+		<view wx:for="{{artists}}" wx:key="index" class="singers" bindtap="singerDetail" data-id="{{item.id}}">
+			<view class="flex">
+				<image src="{{item.img1v1Url}}" class="singerimg"></image>
+				<view class="songer">{{item.name}}</view>
+				<view wx:if="{{item.accountId!=null}}">
+					<image src="../../image/ren.png" class="ren"></image>
+				</view>
+			</view>
+			<view class="guanzhu">
+				<image src="../../image/加.png" class="add"></image>
+				关注
+			</view>
+		</view>
+	</view>
+</view>

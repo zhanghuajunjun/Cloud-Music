@@ -1,0 +1,29 @@
+.cell-group {
+  padding: 30rpx 20rpx;
+}
+.error {
+  color: brown;
+  width: 100%;
+  text-align: center;
+}
+.register {
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: rgb(255,151,106);
+  color: white;
+  border-radius: 20rpx;
+}
+.submit {
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: linear-gradient(to right, #4bb0ff, #6149f6);
+  color: white;
+  border-radius: 10rpx;
+}
+.cz {
+  margin-top: 100rpx;
+}

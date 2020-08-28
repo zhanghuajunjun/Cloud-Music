@@ -1,0 +1,15 @@
+<view class="title">
+	<view class="recommend">推荐歌单</view>
+	<view class="songlist" bindtap="songsheet">歌单广场</view>
+</view>
+<view class="result">
+	<view wx:for="{{result}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+		<image src="{{item.picUrl}}" class="picUrl">
+			<view class="palycount">
+				<image src="../../image/播放.png" class="paly1"></image>
+				<view>{{item.playCount}}</view>
+			</view>
+		</image>
+		<view class="name">{{item.name}}</view>
+	</view>
+</view>

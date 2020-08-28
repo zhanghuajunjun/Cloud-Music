@@ -1,0 +1,123 @@
+<view>
+	<image src="{{artist.img1v1Url}}" class="img1v1Url">
+		<view class="artistName">{{artist.name}}</view>
+		<view wx:if="{{artist.accountId != null}}" class="ruzhu">入驻艺人</view>
+		<view class="artistElse">
+			<view class="detail">专辑:{{artist.albumSize}}</view>
+			<view class="detail">歌曲:{{artist.musicSize}}</view>
+			<view class="detail">MV:{{artist.mvSize}}</view>
+		</view>
+		<view class="guanzhu">
+			<image src="../../image/加.png" class="add"></image>
+			关注
+		</view>
+		<view class="profilemail">
+			<image src="../../image/邮件.png" class="email"></image>
+			私信
+		</view>
+		<view class="title">
+			<view class="nav {{active === 0 ? 'active' : ''}}" bindtap="home">主页</view>
+			<view class="nav {{active === 1 ? 'active' : ''}}" bindtap="songs">歌曲</view>
+			<view class="nav {{active === 2 ? 'active' : ''}}" bindtap="album">
+				<text>专辑</text>
+				<text class="Size">{{artist.albumSize}}</text>
+			</view>
+			<view class="nav {{active === 3 ? 'active' : ''}}" bindtap="mv">
+				<text>MV</text>
+				<text class="Size">{{artist.mvSize}}</text>
+			</view>
+		</view>
+	</image>
+	<view wx:if="{{active === 0}}" class="box">
+		<view class="box-nav">
+			<view class="flexs">
+				<image src="../../image/ppp.png" class="ppp"></image>
+				<view class="hot">近期热门</view>
+			</view>
+			<view class="more" bindtap="moresongs">
+				更多热歌
+			</view>
+		</view>
+		<view wx:for="{{hotrecom}}" wx:key="index" class="songs">
+			<view class="d-flex" bindtap="play" data-id="{{item.id}}">
+				<image src="{{item.al.picUrl}}" class="songs-img"></image>
+				<view class="xingqu-item">
+					<view class="item-name">{{item.name}}</view>
+					<view class="al-name">{{item.ar[0].name}} - {{item.al.name}}
+					</view>
+				</view>
+			</view>
+			<view wx:if="{{item.mv !== 0}}">
+				<image src="../../image/play (1).png" class="paly-img" bindtap="playMV" data-id="{{item.mv}}" data-style="{{item.ftype}}"></image>
+			</view>
+		</view>
+		<view class="box-nav">
+			<view class="hot">基本信息</view>
+			<view class="more">更多信息</view>
+		</view>
+		<view class="introduce">个人简介</view>
+		<view class="introduction">{{briefDesc}}</view>
+		<view class="introduce">{{introduction[0].ti}}</view>
+		<view class="introduction">{{introduction[0].txt}}</view>
+	</view>
+	<view wx:if="{{active === 1}}" class="box">
+		<view class="box-nav">
+			<view class="flexs">
+				<image src="../../image/加 添加 文件-4.png" class="ppp"></image>
+				<view class="hot">收藏热门50</view>
+			</view>
+			<view class="more">
+				管理
+			</view>
+		</view>
+		<view wx:for="{{hotList}}" wx:key="index" class="sings">
+			<view class="sings-item" bindtap="play" data-id="{{item.id}}">
+				<view class="num">{{index+1}}</view>
+				<view class="sings-name">
+					<view class="item-name">{{item.name}}</view>
+					<view class="al-name">{{item.ar[0].name}} - {{item.al.name}}</view>
+				</view>
+			</view>
+			<view wx:if="{{item.mv !== 0}}">
+				<image src="../../image/play (1).png" class="paly-img" bindtap="playMV" data-id="{{item.mv}}" data-style="{{item.ftype}}"></image>
+			</view>
+			<image src="../../image/moress.png" class="moress"></image>
+		</view>
+	</view>
+	<view wx:if="{{active === 2}}" class="box">
+		<view class="box-nav">
+			<view class="hot">按发布时间排序</view>
+			<view class="more">排序</view>
+		</view>
+		<view wx:for="{{Albums}}" wx:key="index" class="songs">
+			<view class="d-flex" bindtap="albumDetail" data-id="{{item.id}}">
+				<image src="{{item.blurPicUrl}}" class="coverImgUrl"></image>
+				<view class="playList">
+					<view class="item-name">{{item.name}}</view>
+					<view class=" al-name">{{item.artist.name}} {{item.publishTime}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view wx:if="{{active === 3}}" class="box">
+		<view class="box-nav">
+			<view class="hot">MV</view>
+		</view>
+		<view wx:for="{{video}}" wx:key="index" class="songs" bindtap="playMV" data-id="{{item.id}}" data-style="mv">
+			<view class="d-flex">
+				<image src="{{item.imgurl}}" class="coverUrl">
+					<view class="palycount">
+						<image src="../../image/播放.png" class="paly1"></image>
+						<view>{{item.playCount}}</view>
+					</view>
+				</image>
+				<view class="playList">
+					<view class="videos">{{item.name}}</view>
+					<view class="creator">{{item.duration}} by {{item.artistName}}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+
+
+</view>

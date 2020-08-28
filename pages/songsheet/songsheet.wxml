@@ -1,0 +1,158 @@
+<van-tabs active="{{ active }}" animated swipeable>
+	<van-tab title="推荐">
+		<view class="recom">
+			<view class="banner-swiper">
+				<swiper circular='{{circular}}' previous-margin="{{previousmargin}}" interval="{{interval}}" next-margin="{{nextmargin}}" bindchange="swiperChange" easing-function="{{easeInOutCubic}}">
+					<swiper-item wx:for="{{arrlist}}" wx:key="index">
+						<view class="slide-image {{index == swiperCurrent ? ' active' : ''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+							<image src="{{item.coverImgUrl}}" class="img">
+								<image src="../../image/play (2).png" class="paly2"></image>
+								<view class="palycount">
+									<image src="../../image/播放.png" class="paly1"></image>
+									<view>{{item.playCount}}</view>
+								</view>
+							</image>
+							<view class="name">
+								<view class="name-item">{{item.name}}</view>
+							</view>
+						</view>
+					</swiper-item>
+				</swiper>
+			</view>
+			<view class="result">
+				<view wx:for="{{list}}" wx:key="key" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="精品">
+		<view class="recom">
+			<view class="nav">
+				<view class="all">全部</view>
+				<view class="filter" bindtap="filter">
+					<van-icon name="filter-o" class="icon" size="14px" />
+					<view>筛选</view>
+				</view>
+			</view>
+			<view class="result">
+				<view wx:for="{{highquality}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="华语">
+		<view class="recom">
+			<view class="result">
+				<view wx:for="{{Chinese}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="电子">
+		<view class="recom">
+			<view class="result">
+				<view wx:for="{{Electronics}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="轻音乐">
+		<view class="recom">
+			<view class="result">
+				<view wx:for="{{lightMusic}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="流行">
+		<view class="recom">
+			<view class="result">
+				<view wx:for="{{popular}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+	<van-tab title="摇滚">
+		<view class="recom">
+			<view class="result">
+				<view wx:for="{{Rock}}" wx:key="index" class="result-item {{(index+2)%3 === 0?'active':''}}" bindtap="playlistDetail" data-id="{{item.id}}">
+					<image src="{{item.coverImgUrl}}" class="picUrl">
+						<view class="palycount">
+							<image src="../../image/播放.png" class="paly1"></image>
+							<view>{{item.playCount}}</view>
+						</view>
+					</image>
+					<view class="itemName">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</view>
+	</van-tab>
+</van-tabs>
+<van-popup show="{{ show }}" round position="bottom" custom-style="height: 80%" bind:close="onClose" closeable close-icon="close">
+	<view class="padddd">
+		<view>选择你喜欢的分类</view>
+		<view class="allsong {{cat === '' ? 'color' : ''}}" bindtap="allSong">全部歌单</view>
+		<view class="zzc">
+			<view wx:for="{{catlist}}" wx:key="index">
+				<view class="catlist-item {{(index+1)%4 === 0 ? '' : 'marrr'}} {{cat !== '' && num == index ? 'color' : ''}}" bindtap="cilckItem" data-item="{{item}}" data-index="{{index}}">{{item}}</view>
+			</view>
+
+		</view>
+	</view>
+</van-popup>

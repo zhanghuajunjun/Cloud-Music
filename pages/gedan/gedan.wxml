@@ -1,0 +1,76 @@
+<view>
+	<view class="back" style="">
+		<image src="{{playlist.coverImgUrl}}" class="back_img"></image>
+		<view class="d-flex">
+			<image src="{{playlist.coverImgUrl}}" class="album_img">
+				<view class="palycount">
+					<image src="../../image/播放.png" class="paly1"></image>
+					<view>{{playCount}}</view>
+				</view>
+			</image>
+			<view>
+				<view class="album_name">{{playlist.name}}</view>
+				<view class="artists">
+					<image src="{{playlist.creator.avatarUrl}}" class="avatarUrl"></image>
+					<view class="artistsName">{{playlist.creator.nickname}}</view>
+					<view>></view>
+				</view>
+				<view class="description">
+					<view class="album_description">{{playlist.description}}</view>
+					<view class="more">></view>
+				</view>
+			</view>
+		</view>
+		<view class="icon">
+			<view class="f-dir-mid">
+				<image src="../../image/评价.png" class="iconfont_pj"></image>
+				<view class="count">{{playlist.commentCount}}</view>
+			</view>
+			<view class="f-dir-mid">
+				<image src="../../image/分享.png" class="iconfont"></image>
+				<view class="count">{{playlist.shareCount}}</view>
+			</view>
+			<view class="f-dir-mid">
+				<image src="../../image/下载.png" class="iconfont"></image>
+				<view class="count">下载</view>
+			</view>
+			<view class="f-dir-mid">
+				<image src="../../image/多选.png" class="iconfont_dx"></image>
+				<view class="count">多选</view>
+			</view>
+		</view>
+		<view class="title">
+			<view class="flex-cent" bindtap="play">
+				<image src="../../image/ppp.png" class="play_img"></image>
+				<view class="play_all">播放全部</view>
+				<view class="songs">(共{{playlist.tracks.length}}首)</view>
+			</view>
+			<view class="collect">
+				<image src="../../image/加.png" class="add"></image>
+				<view>收藏</view>
+			</view>
+		</view>
+	</view>
+	<view class="songs_box">
+		<view wx:for="{{playlist.tracks}}" wx:key="index" class="sings">
+			<view class="sings-item" bindtap="play" data-id="{{item.id}}">
+				<view class="num">{{index+1}}</view>
+				<view class="sings-name">
+					<view class="item-name">{{item.name}}</view>
+					<view class="al-name">
+						<view class="alName">
+							<view wx:for="{{item.ar}}" wx:for-item="item1" wx:for-index="index1" wx:key="index1" class="al_name">
+								{{item1.name}}
+							</view>
+							<view wx:if='{{index1 < item.ar.length-1}}'>/</view>
+						</view> - {{item.al.name}}
+					</view>
+				</view>
+			</view>
+			<view wx:if="{{item.mv !== 0}}">
+				<image src="../../image/play (1).png" class="paly-img" bindtap="playMV" data-id="{{item.mv}}" data-style="{{item.ftype}}"></image>
+			</view>
+			<image src="../../image/moress.png" class="moress"></image>
+		</view>
+	</view>
+</view>

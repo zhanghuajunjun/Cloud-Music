@@ -1,0 +1,58 @@
+.box {
+  padding: 0 30rpx;
+}
+.recommend {
+  margin: 50rpx 0 30rpx 0;
+  font-weight: 600;
+}
+.wid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.cnm {
+  margin: 0 15rpx;
+}
+.img {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+  position: relative;
+}
+.name {
+  width: 220rpx;
+  padding: 10rpx 0;
+  font-size: 26rpx;
+}
+.image {
+  width: 220rpx;
+  height: 220rpx;
+  border-radius: 20rpx;
+  margin-top: 15rpx;
+  position: relative;
+}
+.tracks {
+  margin-left: 30rpx;
+  height: 220rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.item1 {
+  width: 440rpx;
+  margin-top: 30rpx;
+  font-size: 26rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.updata {
+  color: white;
+  font-size: 24rpx;
+  position: absolute;
+  left: 10rpx;
+  bottom: 10rpx;
+}
+.mm {
+  margin-bottom: 15rpx;
+}

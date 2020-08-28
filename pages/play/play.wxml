@@ -1,0 +1,59 @@
+<view class="contents">
+	<image src="{{idArray[index].img}}" class="big-img"></image>
+	<view class="playdetail">
+		<view class="swiper-item" bindtap="active" wx:if="{{active === 0}}">
+			<view class="title">{{idArray[index].title}}</view>
+			<view class="geshou">
+				<view wx:for="{{idArray[index].name}}" wx:key="index" class="geshou_item">{{item}}</view>
+			</view>
+			<view class="imgview">
+				<image src="{{idArray[index].img}}" class="small-img {{flag === false ? 'active' : ''}}"></image>
+			</view>
+		</view>
+		<view wx:if="{{active === 1}}" bindtap="actives" class="swiperitem">
+			<scroll-view scroll-y="true" style="height: 100%;" scroll-top="{{marginTop}}" scroll-with-animation='true'>
+				<view class="code"></view>
+				<block wx:for="{{finalLyric}}" wx:key="index">
+					<text class="Lyric {{currentIndex == index ? 'lyricRed' : ''}}">{{item[1]}}</text>
+				</block>
+				<view class="code"></view>
+			</scroll-view>
+		</view>
+	</view>
+	<view class="iconImg">
+		<image src="../../image/aixin.png" class="icon"></image>
+		<image src="../../image/xiazai.png" class="icon"></image>
+		<image src="../../image/lingsheng.png" class="icon"></image>
+		<image src="../../image/xinxi.png" class="icon"></image>
+		<image src="../../image/moress.png" class="icon"></image>
+	</view>
+	<view class="bofang">
+		<view class="judutiao">
+			<view class="playTime">{{currentTime}}</view>
+			<slider activeColor="#c20c0c" block-size="-12" value='{{value}}' bindchange="change" max="{{endTime}}"/>
+			<view class="totalTime">{{duration}}</view>
+		</view>
+		<view class="uzi">
+			<view wx:if="{{num===0}}">
+				<image src="../../image/循环.png" class="icons" bindtap="circulation"></image>
+			</view>
+			<view wx:if="{{num===1}}">
+				<image src="../../image/随机.png" class="icons" bindtap="random"></image>
+			</view>
+			<view wx:if="{{num===2}}">
+				<image src="../../image/单曲循环.png" class="icons" bindtap="repeat"></image>
+			</view>
+			<image src="../../image/上一曲 .png" class="icons" bindtap="lastSong"></image>
+			<view wx:if="{{flag===true}}">
+				<image src="../../image/播放 (1).png" class="icons" bindtap="unplay"></image>
+			</view>
+			<view wx:if="{{flag===false}}">
+				<image src="../../image/播放 (2).png" class="icons" bindtap="play"></image>
+			</view>
+			<image src="../../image/下一曲.png" class="iconss" bindtap="nextSong"></image>
+			<image src="../../image/列表.png" class="iconsss"></image>
+		</view>
+	</view>
+
+
+</view>

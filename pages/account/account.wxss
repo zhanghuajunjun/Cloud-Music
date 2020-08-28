@@ -1,0 +1,93 @@
+.notLogged {
+  width: 100%;
+  height: 1000rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.not-Logged {
+  font-size: 34rpx;
+  margin-bottom: 20rpx;
+}
+
+.submit {
+  width: 220rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 80rpx;
+  background: linear-gradient(to right, #4bb0ff, #6149f6);
+  color: white;
+  border-radius: 10rpx;
+}
+
+.else {
+  padding: 40rpx;
+}
+
+.image {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+}
+
+.nickname {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.level {
+  text-align: center;
+  font-size: 28rpx;
+  width: 100rpx;
+  border-radius: 20rpx;
+  margin-top: 10rpx;
+  background: rgb(238,238,238);
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 60rpx;
+  padding-top: 20rpx;
+}
+
+.nav {
+  font-size: 28rpx;
+  color: rgb(194, 193, 193);
+  margin-top: 10rpx;
+}
+
+.edit {
+  font-size: 42rpx;
+}
+
+.f-dir {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.account2 {
+  width: 100rpx;
+  padding: 6rpx 0;
+  font-size: 30rpx;
+  background: rgb(194, 193, 193);
+  color: white;
+  border-radius: 20rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 100rpx;
+}

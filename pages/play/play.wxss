@@ -1,0 +1,182 @@
+.contents {
+  position: fixed;
+  left: 0rpx;
+  top: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  background: black;
+}
+
+.big-img {
+  width: 100%;
+  height: 100%;
+  /* 透明度：1代表完全透明 0代表不透明 */
+  opacity: 0.2;
+}
+
+.title {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 40rpx;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.songer {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+}
+.geshou {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  
+}
+.geshou_item {
+  color: white;
+  font-size: 30rpx;
+  margin-left: 10rpx;
+}
+.geshou_item:first-child {
+  margin-left: 0;
+}
+.small-img {
+  height: 350rpx;
+  width: 350rpx;
+  border-radius: 50%;
+  border: 80rpx solid #000;
+  /* 动画 
+    linear  匀速
+    infinite  循环
+  */
+  animation: zhuan 6s linear infinite;
+  /*动画运行状态    两种：1、running 2、pause*/
+  animation-play-state: running;
+}
+
+@keyframes zhuan {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+.active {
+  animation-play-state: paused;
+}
+.Lyric {
+  display: block;
+  line-height: 70rpx;
+  font-size: 32rpx;
+  text-align: center;
+  color: rgba(255, 255, 255, .5);
+}
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+.lyricRed {
+  color: red;
+}
+.imgview {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 60rpx;
+}
+
+.bofang {
+  width: 100%;
+  height: 240rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.playdetail {
+  width: 100%;
+  height: 800rpx;
+  position: absolute;
+  left: 0rpx;
+  top: 80rpx;
+  z-index: 999;
+}
+
+.swiper-item {
+  width: 100%;
+  height: 800rpx;
+  z-index: 999
+}
+.swiperitem {
+  width: 80%;
+  height: 800rpx;
+  z-index: 999;
+  margin: 0 auto;
+}
+.icon {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.iconImg {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 250rpx;
+}
+
+.icons {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+.iconsss {
+  width: 90rpx;
+  height: 90rpx;
+}
+.iconss {
+  width: 60rpx;
+  height: 60rpx;
+}
+.uzi {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 40rpx;
+}
+.judutiao {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30rpx;
+  margin-top: 30rpx;
+}
+.playTime {
+  font-size: 26rpx;
+  color: #eee;
+}
+.totalTime {
+  font-size: 26rpx;
+  color: #eee;
+}
+.judutiao slider {
+  width: 500rpx;
+}
+.code {
+  height: 200rpx;
+  width: auto;
+}
